@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+        .hams {
+            position: relative;
+            left: 500px;
+            border: 2px solid #FE7401;
+            width: 41vw;
+            padding-left: 5px;
+            opacity: 0;
+            display: none;
+        }
+
+        .quad img {
+            padding-left: 100px;
+            width: 450px;
+        }
+
+        .calv span {
+            font-weight: 700;
+        }
+        .calv ol li {
+            line-height: 25px;
+        }
+
+        .quad a {
+            text-decoration: none;
+            text-align: center;
+            padding-right: 5px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #FE7401;
+            border-radius: 50px;
+            position: fixed;
+            top: 25px;
+        }
+        .quad a:hover {
+            cursor: pointer;
+        }
+
+        /* <div class="loader"></div> */
+
+        .loader {
+            display: flex;
+            position: relative;
+            left: 770px;
+            top: 300px;
+            width: 100px;
+            aspect-ratio: 1;
+            animation: l10-0 1.5s infinite linear;
+        }
+        .loader:before,
+        .loader:after {
+            content: "";
+            width: 50%;
+            background: #FE7401;
+            clip-path: polygon(0 0,100% 50%,0% 100%);
+            animation: inherit;
+            animation-name: l10-1;
+            transform-origin: bottom left;
+        }
+        .loader:before {
+            clip-path: polygon(0 50%,100% 0,100% 100%);
+            transform-origin: bottom right;
+            --s:-1;
+        }
+        @keyframes l10-0 {
+            0%,34.99% {transform: scaley(1)}
+            35%,70%   {transform: scaley(-1)}
+            90%,100%  {transform: scaley(-1) rotate(180deg)}
+        }
+
+        @keyframes l10-1 {
+            0%,10%,70%,100%{transform:translateY(-100%) rotate(calc(var(--s,1)*135deg))}
+            35%            {transform:translateY(0%)    rotate(0deg)}
+        }
+
+        /* MEDIA QUERY */
+
+        @media screen and (max-width: 1114px) {
+            .hams {
+            position: relative;
+            left: 0;
+            width: 80vw;
+            margin-left: 3rem;
+            }
+
+            .quad img {
+                padding-left: 100px;
+                width: 350px;
+            }
+            .hams iframe {
+                width: 800px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .hams {
+            position: relative;
+            left: 0;
+            width: 80vw;
+            margin-left: 3rem;
+            }
+
+            .quad img {
+                padding-left: 100px;
+                width: 450px;
+            }
+            .hams iframe {
+                width: 600px;
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            .hams {
+            position: relative;
+            left: 0;
+            width: 80vw;
+            margin-left: 2rem;
+            }
+
+            .hams iframe {
+                width: 250px;
+            }
+            .quad img {
+                padding-left: 25px;
+                width: 300px;
+            }
+            .quad a {
+                position: fixed;
+                top: 25px;
+            }
+        }
+
+        @media screen and (max-width: 760px) {
+            .hams {
+            position: relative;
+            left: 0;
+            width: 80vw;
+            margin-left: 2rem;
+            }
+
+            .hams iframe {
+                width: 335px;
+            }
+            .quad img {
+                padding-left: 30px;
+                width: 300px;
+            }
+        }
+
+
+        @media screen and (max-width: 428px) {
+            .hams {
+            position: relative;
+            left: -25px;
+            width: 90vw;
+            margin-left: 2rem;
+            }
+            .hams iframe {
+                width: 320px;
+            }
+
+            .quad img {
+                padding-left: 30px;
+                width: 300px;
+            }
+
+        }
+
+        @media screen and (max-width: 320px) {
+            
+            .hams iframe {
+                width: 285px;
+            }
+
+            .quad img {
+                padding-left: 20px;
+                width: 200px;
+            }
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <div class="hams">
+        
+        <div class="quad">
+            <a href="cardio.html">&#8630;</a>
+            <img src="images/cad1.gif" alt="">
+        </div>
+        <div class="calv">
+            <h2>Astride Jumps (Male)</h2>
+            <p><span>Target Muscle:</span> cardiovascular system</p>
+            <p><span>Equipment:</span> body weight</p>
+            <p><span>Secondary Muscle:</span> quadriceps, hamstrings, calves</p>
+
+            <h4>Instructions:</h4>
+
+            <ol>
+                <li>Stand with your feet shoulder-width apart.</li>
+                <li>Bend your knees and lower your body into a squat position.</li>
+                <li>Jump explosively upwards, extending your legs and arms.</li>
+                <li>While in the air, spread your legs apart and bring your arms out to the sides.</li>
+                <li>Land softly with your feet shoulder-width apart, bending your knees to absorb the impact.</li>
+                <li>Repeat for the desired number of repetitions.</li>
+            </ol>
+            <h2>Related Videos</h2>
+            <iframe width="600" height="215" src="https://www.youtube.com/embed/iPrUS9v0Suk" title="3x30s/10s Series “Astride Jumps” @22MasFit Cardio Follow Along Exercise" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        
+    </div>
+    
+    <script>
+        const loader = document.querySelector('.loader');
+        const hams = document.querySelector('.hams');
+
+        function init() {
+            setTimeout(() => {
+                loader.style.opacity = 0;
+                loader.style.display = 'none';
+
+                hams.style.display = 'block';
+                setTimeout(() => {hams.style.opacity = 1}, 50);
+            }, 4000);
+        }
+
+        init();
+    </script>
+</body>
+</html>
